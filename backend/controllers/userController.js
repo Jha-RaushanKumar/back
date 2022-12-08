@@ -81,7 +81,7 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
 
     await user.save({ validateBeforeSave: false });
 
-    const resetPasswordUrl = `${req.protocol}://${req.get("host")}/api/v1/password/reset/${resetToken}`;
+    const resetPasswordUrl = `${req.protocol}://${req.get("host")}v1/password/reset/${resetToken}`;
     // const resetPasswordUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
     const message = `Your password reset token is : tempppp- \n\n ${resetPasswordUrl} \n\n If you have not requested this email the, please ignore it`;
 
